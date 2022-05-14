@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --ff-size: 10px;
+}
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.dashboard {
+  display: grid;
+  grid-template: 1fr 2fr 2fr / 1fr 3fr 1fr;
+  grid-template-areas: "user_profile dash_nav dash_nav"
+                       "user_profile user_projects announcement"
+                       "user_profile user_projects trending";
+}
+
+
+.dashboard > section {
+  border: 1px solid green;
+}
+
+
+.user_profile {
+  grid-area: user_profile;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.user_profile div {
+  
+}
