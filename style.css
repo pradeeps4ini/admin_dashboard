@@ -10,10 +10,9 @@
   --ff-size: 10px;
 }
 
-
-body {
-  height: 100vh;
-  width: 100vw;
+img {
+  width: 20px;
+  height: 20px;
 }
 
 
@@ -36,13 +35,37 @@ body {
   flex-flow: column nowrap;
 }
 
-.user_profile img {
-  height: 20px;
-  width: 20px;
-}
-
 .user_profile > div {
   margin-bottom: 50px;      
+}
+
+.dash_logo {
+  display: flex;
+  padding: 1rem 0 0 1rem;
+  gap: 1rem;
+}
+
+.dash_logo p {
+  font-size: 1.5em;
+}
+
+.logo {
+  width: 10%;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  gap: 1px;
+}
+
+.logo div {
+  border: 1px solid red;
+}
+
+.logo div:first-child {
+  grid-area: 1 / 1 / 3 / 2; 
+}
+
+.logo div:last-child {
+  grid-area: 2 / 2 / 4 / 3; 
 }
 
 .user_profile > div:nth-child(n + 2) > div {
@@ -53,8 +76,34 @@ body {
 }
 
 
+
 .user_info {
   grid-area: user_info;
   display: grid;
-  grid-template-rows: 1.5fr 2fr;
+  grid-template-rows: 1fr 2fr;
+}
+
+.user-info img {
+  width: 20px;
+  height: 20px;
+}
+
+.search_nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.search_nav div:first-child {
+  display: flex;
+  gap: 1rem;
+}
+
+.search_nav div:last-child {
+  display: flex;
+}
+
+.search_box {
+  width: 500px;
+  border: 1px solid gray;  
 }
