@@ -18,7 +18,7 @@ img {
 
 .dashboard {
   display: grid;
-  grid-template: 1fr 2fr 2fr / 1fr 3fr 1fr;
+  grid-template: 1fr 2fr 2fr / 1.2fr 3fr 1fr;
   grid-template-areas: "user_profile user_info user_info"
                        "user_profile user_projects announcement"
                        "user_profile user_projects trending";
@@ -90,8 +90,8 @@ img {
 
 .search_nav {
   display: flex;
-  justify-content: space-between;
   padding: 1rem 2rem;
+  gap: 8rem;
 }
 
 .search_nav div:first-child {
@@ -99,11 +99,44 @@ img {
   gap: 1rem;
 }
 
+.search_icon {
+  align-self: center;
+}
+
 .search_nav div:last-child {
   display: flex;
+  gap: 1.5rem;
 }
 
 .search_box {
   width: 500px;
   border: 1px solid gray;  
+  border-radius: 20px;
+}
+
+.search_nav div:last-child > * {
+  align-self: center;
+}
+
+
+.user_actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6rem 0 2rem;
+}
+
+.user_actions > div:first-child {
+  display: flex;    
+  align-self: center;
+  gap: 1.5rem;
+}
+
+.user_actions > div:first-child > img {
+  align-self: center;
+}
+
+.user_actions > div:last-child {
+  display: flex;
+  align-self: center;
+  gap: 4rem;
 }
