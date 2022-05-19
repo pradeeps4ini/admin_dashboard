@@ -26,16 +26,22 @@ img {
   height: 20px;
 }
 
+h3 {
+  font-size: calc(var(--ff-size) * 1.8);
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
 
 .dashboard {
-  display: grid;
   grid-template: 1fr 4fr / 1.2fr 3fr 1.2fr;
   grid-template-areas: "user_profile user_info user_info"
                        "user_profile user_projects announcement"
-}
-
-.dashboard > section {
-  border: 1px solid green;
 }
 
 
@@ -52,7 +58,6 @@ img {
 }
 
 .dash_logo {
-  display: flex;
   padding: 1rem 0 0 1rem;
   gap: 1rem;
 }
@@ -63,7 +68,6 @@ img {
 
 .logo {
   width: 10%;
-  display: grid;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   gap: 3px;
 }
@@ -91,7 +95,6 @@ img {
 
 .user_info {
   grid-area: user_info;
-  display: grid;
   grid-template-rows: 1fr 2fr;
   background: var(--clr-light);
 }
@@ -113,24 +116,18 @@ img {
 }
 
 .search_nav {
-  display: flex;
   padding: 1rem 2rem;
   gap: 8rem;
 }
 
-.search_nav div:first-child {
-  display: flex;
-  gap: 1rem;
+.search_nav > div {
+  gap: 1.2rem;
 }
 
 .search_icon {
   align-self: center;
 }
 
-.search_nav div:last-child {
-  display: flex;
-  gap: 1.5rem;
-}
 
 .search_box {
   width: 500px;
@@ -144,29 +141,27 @@ img {
 
 
 .user_actions {
-  display: flex;
   justify-content: space-between;
   padding: 0 6rem 0 2rem;
 }
 
 .user_actions > div:first-child {
-  display: flex;    
   align-self: center;
   gap: 1.5rem;
+}
+
+.user_actions > div:last-child {
+  align-self: center;
+  gap: 2rem;
 }
 
 .user_actions > div:first-child > img {
   align-self: center;
 }
 
-.user_actions > div:last-child {
-  display: flex;
-  align-self: center;
-  gap: 2rem;
-}
 
 .actions p {
-  padding: .25rem 1rem;
+  padding: .25rem 1.5rem;
   border-radius: 20px;
   color: var(--clr-light);
   background: var(--clr-dark);
@@ -178,7 +173,6 @@ img {
 }
 
 .project_list {
-  display: grid;
   grid-template: repeat(3, 1fr) / repeat(auto-fit ,minmax(300px, 1fr));
   gap: 1rem;
 }
@@ -210,20 +204,27 @@ img {
 
 
 .sidebar{
-  margin-top: 1rem;
-  display: flex;
+  margin: 1rem 1rem 0 0;
   flex-flow: column nowrap;
-  gap: 3rem;
+  gap: 1rem;
 }
 
-.announcement > div {
-  margin: 1rem 2rem;    
-  padding-bottom: 1rem;
-  font-size: 11px;
+:is(.announcement, .trending) > div {
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  background: var(--clr-light);
+}
+
+.announcement > div > div {
+  padding: 1rem 0;
+  font-size: calc(var(--ff-size) * 1.2);
+}
+
+.announcement > div > div:not(:last-child) {
   border-bottom: 1px solid gray;
 }
 
-.trending > div {
+.trending > div > div {
   margin: 1.5rem 2rem;
   display: flex;
   gap: 1rem;
@@ -231,4 +232,11 @@ img {
 
 .trending > div  p {
   font-size: 12px;
+}
+
+.trending img {
+  background: var(--clr-border);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }
